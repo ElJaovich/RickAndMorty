@@ -1,0 +1,115 @@
+.container-cards{
+
+    display:grid;
+    grid-gap: 50px;
+    grid-template-columns: repeat(2,auto);
+    background-color: rgb(60, 62, 68);
+    padding:90px;
+    
+    grid-template-areas: "card card"
+                         "card card"
+                         "card card" ;
+ 
+}
+
+.text{
+  color: rgb(255, 255, 255);
+  
+    
+}
+
+h2{
+    text-align: start;
+    margin-left: 15px;
+    margin: 15px;
+    flex-wrap: wrap;
+}
+
+strong{
+    font-weight: bold;
+    color: whitesmoke;
+    
+
+}
+
+.character-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    color: rgb(180, 177, 186);
+    font-size: 1.5rem !important;
+
+}
+
+.img{
+    max-width:40%;
+    max-height: 100%;
+}
+
+.card{
+   max-width: 100%;
+}
+.css-hxrl50-MuiTypography-root{
+    font-size: 4rem !important;
+}
+
+
+@media screen and (max-width: 1300px){
+
+    .container-cards{
+        display:grid;
+        grid-template-columns: repeat(1,auto);
+        background-color: rgb(28, 25, 25);
+        padding:40px;
+        grid-template-areas: 
+        "card";
+
+    }
+    body {
+        background-color: lightblue;
+      }
+    .img{
+        max-width: 30%;
+    }
+
+    .css-hxrl50-MuiTypography-root{
+        font-size: 4rem !important;
+    }
+
+    
+
+}
+
+@media screen and (max-width: 650px){
+
+    .css-hxrl50-MuiTypography-root{
+        font-size: 2.5rem !important;
+    }
+    .css-hxrl50-MuiTypography-root{
+        padding: 0px;
+    }
+    body{
+        background-color: red;
+    }
+    .img{
+        max-width:100% !important;
+        height:50% !important;
+    }
+
+    .card{
+       
+       flex-direction: column;
+       height: auto !important;
+
+    }
+    .character-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: start !important;
+    color: rgb(180, 177, 186);
+
+    }
+
+}
+
+
