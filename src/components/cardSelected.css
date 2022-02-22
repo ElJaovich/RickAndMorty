@@ -31,6 +31,10 @@ strong{
     
 
 }
+span{
+    font-weight: bold;
+    color: whitesmoke;
+}
 
 .character-data{
     display: flex;
@@ -43,25 +47,20 @@ strong{
 
 .img{
     max-width:40%;
-    max-height: 100%;
+    max-height: auto;
 }
 
 .card{
    max-width: 100%;
 }
-.css-hxrl50-MuiTypography-root{
-    font-size: 4rem !important;
-}
 
-@media screen and (max-width: 2000px){
-
-    .css-hxrl50-MuiTypography-root{
-        font-size: 2.5rem !important;
-    }
-    h2{
-        font-size: 1em;
-    }
+.css-1t6e9jv-MuiCardActions-root{
     
+    /* margin-left: 20% !important; */
+    display: flex;
+    justify-content: center;
+
+
 
 }
 
@@ -76,6 +75,15 @@ strong{
         "card";
 
     }
+    .css-1t6e9jv-MuiCardActions-root{
+    
+        /* margin-left: 20% !important; */
+        display: flex;
+        justify-content: center;
+    
+    
+    
+    }
 
     .img{
         max-width: 30%;
@@ -85,9 +93,19 @@ strong{
         font-size: 4rem !important;
     }
 
+    span{
+        font-size: 0.8em;
+
+    }
+    h2{
+        font-size: 1em;
+    }
+
     
 
 }
+
+
 
 @media screen and (max-width: 650px){
 
@@ -114,6 +132,13 @@ strong{
     flex-direction: column;
     justify-content: start !important;
     color: rgb(180, 177, 186);
+
+    }
+    h2{
+        font-size: 1em;
+    }
+    span{
+        font-size: 0.8em;
 
     }
 

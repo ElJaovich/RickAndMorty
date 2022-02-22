@@ -58,7 +58,9 @@ const EveryCard = (filter,usuarios,estado) =>{
                     </CardContent>
                   </Card>
                 ))
+
               : estado.map((j) => (
+                
                   <Card
                     sx={{
                       display: "flex",

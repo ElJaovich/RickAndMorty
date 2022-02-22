@@ -3,6 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { Link } from '@mui/material';
 import './cards.css'
 import { useSelector  } from 'react-redux';
 import TextField from '@mui/material/TextField';
@@ -10,10 +11,11 @@ import { Box } from '@mui/material';
 import { createTheme} from '@mui/material/styles';
 
 
-export var filter = false
+ var filter = false
 const MediaCard = (character) => {
 
  const estado =  useSelector(state=> state.character.character)
+ 
   const [usuarios, setUsuarios]= useState([]);
 
 
@@ -80,6 +82,7 @@ theme.typography.h3 = {
             }}
             key={j.id}
             className="card"
+            
           >
             <CardMedia
               sx={{  }}
@@ -87,6 +90,7 @@ theme.typography.h3 = {
               component="img"
               image={j.image}
               alt={j.name}
+              
             />
 
             <CardContent sx={{ padding:"0px" , marginTop:"15px", width: "100%", height:"auto" }}>
@@ -97,9 +101,12 @@ theme.typography.h3 = {
                 className="textTitle"
                 sx={{ textAlign:"center"  }}
               >
+                <Link href={"/character/"+j.id} underline="none">
                 <strong>{j.name}</strong>
+                  </Link>
+               
               </Typography>
-              <Typography sx={{ height: "70%" }}>
+              <Typography component={'span'} sx={{ height: "70%" }}>
                 <div className="character-data">
                   <h2>
                     Status: <strong>{j.status}</strong>
@@ -118,6 +125,7 @@ theme.typography.h3 = {
           </Card>
             ))
           : estado.map((j) => (
+
               <Card
                 sx={{
                   display: "flex",
@@ -144,9 +152,11 @@ theme.typography.h3 = {
                     className="textTitle"
                     sx={{ textAlign:"center"  }}
                   >
-                    <strong>{j.name}</strong>
+                  <Link href={"/character/"+j.id} underline="none">
+                <strong>{j.name}</strong>
+                  </Link>
                   </Typography>
-                  <Typography sx={{ height: "70%" }}>
+                  <Typography component={'span'} sx={{ height: "70%" }}>
                     <div className="character-data">
                       <h2>
                         Status: <strong>{j.status}</strong>

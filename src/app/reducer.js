@@ -3,7 +3,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 const initialState = {
   character: [],
-  status: ''
+  status: '',
+  favorites:[]
 }
 
 
@@ -12,7 +13,9 @@ const slice = createSlice({
   name: 'character',
   initialState,
   reducers: {
-   //FetchTodos: (state) => console.log('state')
+   AddFavorite: (state,action) => {state.favorites = action.payload},
+
+   RemoveFavorite:(state,action)=>{delete state.favorites}
   },
   extraReducers:(builder) => {
     builder
@@ -35,7 +38,7 @@ const slice = createSlice({
   },
 })
  
-export const { FetchTodos } = slice.actions
+export const { AddFavorite,RemoveFavorite } = slice.actions
 
 export default slice.reducer
 const axios = require('axios');
