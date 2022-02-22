@@ -10,7 +10,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import "./navbar.css"
 export default function ButtonAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box className="box" sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -25,7 +25,6 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             The Rick And Morty App
           </Typography>
-          <Button color="error" >Favorites</Button>
         </Toolbar>
       </AppBar>
     </Box>

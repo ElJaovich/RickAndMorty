@@ -6,7 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
-import { Link } from '@mui/material';
 import Button from '@mui/material/Button';
 import './cardSelected.css'
 import {store} from "../app/store"
@@ -14,16 +13,10 @@ import { createAction } from '@reduxjs/toolkit'
 
 
 
-
-
-
-
-
 function CardSelected(props) {
   
 	const [isFavorite, setIsFavorite] = useState(false);
-  const state = useSelector((state)=>state.character.character)
-  const state1 = useSelector(s=>s)
+  const state = useSelector((state)=>state.character)
   const Fav = createAction('character/AddFavorite')
   const RemoveFav = createAction('character/RemoveFavorite')
 
@@ -40,17 +33,19 @@ function CardSelected(props) {
 
   const addFavorite=()=>(
 
-    state.map(j=>{if(j.id == id){
-
+    state.character.map(j=>{if(j.id == id){
+    
     store.dispatch(Fav(j))
-    console.log(store.getState())
+    alert('Added to Favorites')
+
   }}))
 
   const removeFavorite=()=>(
-    state.map(j=>{if(j.id == id){
+    state.character.map(j=>{if(j.id == id){
       
       store.dispatch(RemoveFav(j))
-      console.log(store.getState())
+      //console.log(store.getState())
+      alert('Removed form Favorites')
     }}))
 
 
@@ -61,9 +56,9 @@ function CardSelected(props) {
    
     return (
         <div>
-           {state.map((j) =>{
+           {state.character.map((j) =>{
                     if (j.id == id){
-                        console.log(j)
+                    
                     return(
 
                     <Card
